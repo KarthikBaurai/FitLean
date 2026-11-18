@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build output
+frontend/dist/
+
+# Secrets: only .env.example is committed
+.env
+.env.local
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
