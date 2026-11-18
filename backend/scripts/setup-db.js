@@ -10,7 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 const mysql = require('mysql2/promise');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs'); // bcrypt in pure JavaScript (no native build needed)
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 const DB_DIR = path.join(__dirname, '..', '..', 'database');

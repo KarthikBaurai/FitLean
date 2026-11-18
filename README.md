@@ -144,7 +144,8 @@ Full details, the ER diagram and the `EXPLAIN` results are in [`docs/DATABASE.md
   (durations 30/60/90, `ends_at = starts_at + duration`, opening hours, prices ≥ 0), `NOT NULL`, `ENUM`s.
 - Indexes on `(trainer_id, starts_at)`, `(member_id, starts_at)` and `(status, starts_at)` for the
   queries that run at volume (5,000+ appointments, 10,000+ history rows).
-- Passwords are stored only as **bcrypt** hashes (`users.password_hash`).
+- Passwords are stored only as **bcrypt** hashes (`users.password_hash`), made with the `bcryptjs` package
+  (the same bcrypt algorithm written in plain JavaScript, so `npm install` needs no C++ build tools).
 
 ## Project structure
 

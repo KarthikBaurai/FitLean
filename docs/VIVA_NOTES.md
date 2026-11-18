@@ -62,8 +62,9 @@ History must stay answerable ("who cancelled, and when?"). Rows change status; t
 `appointment_history` can't even be updated: triggers raise an error.
 
 **How are passwords stored?**
-`bcrypt.hash(password, 10)`, a one-way hash with a random salt. Login uses `bcrypt.compare`. The plain
-password is never stored or logged.
+`bcrypt.hash(password, 10)`, a one-way hash with a random salt and cost factor 10. Login uses
+`bcrypt.compare`. The plain password is never stored or logged. The package is `bcryptjs`: the same bcrypt
+algorithm in pure JavaScript, chosen so installing the project never needs C++ build tools.
 
 **How does login work?**
 Login returns a JWT signed with `JWT_SECRET` containing `{ id, role }`. The browser sends it in the

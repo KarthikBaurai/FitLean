@@ -1,6 +1,6 @@
 // /api/auth: register, log in, and "who am I".
 const express = require('express');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs'); // bcrypt in pure JavaScript (no native build needed)
 const jwt = require('jsonwebtoken');
 const pool = require('../db');
 const { requireAuth } = require('../middleware/auth');
