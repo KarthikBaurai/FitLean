@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { api } from '../api';
 import TextField from '../components/TextField';
 import { Alert } from '../components/PageStates';
+import { PHOTOS } from '../photos';
 
 const GOALS = ['Weight Loss', 'Muscle Gain', 'General Fitness', 'Strength', 'Rehabilitation', 'Other'];
 
@@ -50,7 +51,12 @@ export default function Contact() {
         <p className="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-md">
           Tell us about your goals. A coach will call or email you to plan your first session.
         </p>
-        <div className="placeholder-art border-outline-variant mt-10 hidden h-72 rounded-lg border md:block" aria-hidden="true" />
+        <img
+          src={PHOTOS.contact.src}
+          alt={PHOTOS.contact.alt}
+          loading="lazy"
+          className="placeholder-art border-outline-variant mt-10 hidden h-80 w-full rounded-lg border object-cover md:block"
+        />
       </div>
 
       <form onSubmit={submit} noValidate className="bg-surface-container-lowest border-outline-variant flex flex-col gap-5 rounded-xl border p-6 sm:p-8">

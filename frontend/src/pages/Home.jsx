@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import { PHOTOS } from '../photos';
 
 const CARDS = [
-  { to: '/trainers', label: 'Coaching', title: 'Train with a coach', text: 'Browse trainer profiles and find a coach for your goals.', large: true },
-  { to: '/book', label: 'Booking', title: 'Book a session', text: "30, 60 or 90 minutes, in your trainer's free hours." },
-  { to: '/contact', label: 'Enquiry', title: 'Free consultation', text: 'Tell us your goals and we will get in touch.' },
+  { to: '/trainers', label: 'Coaching', title: 'Train with a coach', text: 'Browse trainer profiles and find a coach for your goals.', photo: PHOTOS.coaching, large: true },
+  { to: '/book', label: 'Booking', title: 'Book a session', text: "30, 60 or 90 minutes, in your trainer's free hours.", photo: PHOTOS.booking },
+  { to: '/contact', label: 'Enquiry', title: 'Free consultation', text: 'Tell us your goals and we will get in touch.', photo: PHOTOS.consultation },
 ];
 
 export default function Home() {
@@ -12,7 +13,12 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex h-[80vh] min-h-[500px] w-full items-center justify-center overflow-hidden md:min-h-[600px]">
         <div className="absolute inset-0 z-0">
-          <div className="placeholder-art absolute inset-0 h-full w-full" aria-hidden="true" />
+          <img
+            src={PHOTOS.hero.src}
+            alt=""
+            fetchPriority="high"
+            className="placeholder-art absolute inset-0 h-full w-full object-cover"
+          />
           <div className="from-primary/90 via-primary/50 absolute inset-0 bg-gradient-to-r to-transparent" />
         </div>
         <div className="max-w-container-max px-margin-mobile md:px-margin-desktop relative z-10 mx-auto flex w-full flex-col items-start gap-6 md:gap-8">
@@ -46,9 +52,15 @@ export default function Home() {
             <Link
               key={c.to}
               to={c.to}
-              className={`border-outline-variant placeholder-art relative flex min-h-64 flex-col justify-end overflow-hidden rounded-lg border p-6 md:p-8 ${c.large ? 'md:col-span-2 md:min-h-80' : ''}`}
+              className={`group border-outline-variant placeholder-art relative flex min-h-64 flex-col justify-end overflow-hidden rounded-lg border p-6 md:p-8 ${c.large ? 'md:col-span-2 md:min-h-96' : ''}`}
             >
-              <span className="from-primary/80 absolute inset-0 bg-gradient-to-t to-transparent" />
+              <img
+                src={c.photo.src}
+                alt=""
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <span className="from-primary/90 via-primary/40 absolute inset-0 bg-gradient-to-t to-transparent" />
               <span className="relative">
                 <span className="font-label-caps text-label-caps text-secondary-fixed mb-2 block tracking-widest uppercase">{c.label}</span>
                 <span className="font-headline-md text-headline-md text-on-primary block">{c.title}</span>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { PHOTOS } from '../photos';
 
 export default function About() {
   return (
@@ -29,7 +30,11 @@ export default function About() {
           </div>
         </div>
         <div className="border-outline-variant relative h-[400px] overflow-hidden rounded-lg border md:h-[600px]">
-          <div role="img" aria-label="FitLean facility (photo coming soon)" className="placeholder-art absolute inset-0 h-full w-full" />
+          <img
+            src={PHOTOS.about.src}
+            alt={PHOTOS.about.alt}
+            className="placeholder-art absolute inset-0 h-full w-full object-cover"
+          />
         </div>
       </section>
 

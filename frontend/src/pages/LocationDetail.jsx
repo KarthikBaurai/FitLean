@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
 import { Loading, ErrorMessage, Empty } from '../components/PageStates';
 import TrainerPhoto from '../components/TrainerPhoto';
+import { branchPhoto } from '../photos';
 import NotFound from './NotFound';
 
 export default function LocationDetail() {
@@ -17,6 +18,9 @@ export default function LocationDetail() {
       {error && <ErrorMessage error={error} onRetry={reload} />}
       {b && (
         <>
+          <div className="placeholder-art border-outline-variant mb-8 h-56 overflow-hidden rounded-xl border sm:h-72 md:h-96">
+            <img src={branchPhoto(b.slug).src} alt={branchPhoto(b.slug).alt} className="h-full w-full object-cover" />
+          </div>
           <h1 className="font-headline-lg-mobile md:text-headline-lg text-headline-lg-mobile text-primary font-black">{b.name}</h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant mt-3 max-w-2xl">{b.description}</p>
 

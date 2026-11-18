@@ -10,7 +10,8 @@ function initials(name) {
 
 export default function TrainerPhoto({ name, imageUrl }) {
   if (imageUrl) {
-    return <img className="h-full w-full object-cover" src={imageUrl} alt={name} />;
+    // object-[50%_20%]: keep faces in frame when a portrait is cropped to a wide card.
+    return <img className="h-full w-full object-cover object-[50%_20%]" src={imageUrl} alt={name} loading="lazy" />;
   }
   return (
     <div

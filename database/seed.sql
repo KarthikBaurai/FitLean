@@ -26,19 +26,20 @@ INSERT INTO specializations (id, name) VALUES
   (6, 'Mobility');
 
 -- Trainers -------------------------------------------------------------
-INSERT INTO trainers (id, branch_id, slug, name, title, bio, experience_years) VALUES
+-- image_url points at stock photos in frontend/public/images/trainers (credits in CREDITS.md there)
+INSERT INTO trainers (id, branch_id, slug, name, title, bio, experience_years, image_url) VALUES
   (1, 1, 'marcus-thorne',    'Marcus Thorne',     'Performance Coach · CSCS',
-   'Specialises in biomechanics and functional hypertrophy, building strong, injury-resistant athletes.', 8),
+   'Specialises in biomechanics and functional hypertrophy, building strong, injury-resistant athletes.', 8, '/images/trainers/marcus-thorne.jpg'),
   (2, 1, 'elena-rostova',    'Dr. Elena Rostova', 'Bio-Mechanist · PhD Kinesiology',
-   'Expert in spinal mechanics and joint rehabilitation. Runs baseline movement assessments.', 12),
+   'Expert in spinal mechanics and joint rehabilitation. Runs baseline movement assessments.', 12, '/images/trainers/elena-rostova.jpg'),
   (3, 2, 'jackson-vane',     'Jackson Vane',      'HIIT Specialist · NASM CPT',
-   'High-energy conditioning coach who designs interval sessions for fat loss and endurance.', 5),
+   'High-energy conditioning coach who designs interval sessions for fat loss and endurance.', 5, '/images/trainers/jackson-vane.jpg'),
   (4, 2, 'rohit-sharma',     'Rohit Sharma',      'Head Strength Coach · CSCS',
-   'Heavy barbell technique: squat, bench and deadlift bar-path coaching and meet preparation.', 8),
+   'Heavy barbell technique: squat, bench and deadlift bar-path coaching and meet preparation.', 8, '/images/trainers/rohit-sharma.jpg'),
   (5, 3, 'priya-verma',      'Priya Verma',       'Functional & Mobility Specialist',
-   'Focuses on mobility, hip-hinge patterns and getting back to training after injury.', 6),
+   'Focuses on mobility, hip-hinge patterns and getting back to training after injury.', 6, '/images/trainers/priya-verma.jpg'),
   (6, 3, 'vikram-singh',     'Vikram Singh',      'Body Transformation Coach',
-   'Data-driven body recomposition through progressive overload and nutrition phasing.', 7);
+   'Data-driven body recomposition through progressive overload and nutrition phasing.', 7, '/images/trainers/vikram-singh.jpg');
 
 INSERT INTO trainer_specializations (trainer_id, specialization_id) VALUES
   (1, 1), (1, 5),

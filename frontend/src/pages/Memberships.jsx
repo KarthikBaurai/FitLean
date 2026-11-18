@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
 import { Loading, ErrorMessage, Empty } from '../components/PageStates';
+import { PHOTOS } from '../photos';
 
 export default function Memberships() {
   const { data, loading, error, reload } = useFetch('/plans');
@@ -28,7 +29,11 @@ export default function Memberships() {
           </div>
         </div>
         <div className="border-outline-variant relative h-[300px] overflow-hidden rounded-lg border sm:h-[400px] md:h-[600px]">
-          <div role="img" aria-label="FitLean gym interior (photo coming soon)" className="placeholder-art h-full w-full" />
+          <img
+            src={PHOTOS.memberships.src}
+            alt={PHOTOS.memberships.alt}
+            className="placeholder-art h-full w-full object-cover"
+          />
         </div>
       </section>
 
